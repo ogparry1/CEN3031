@@ -6,3 +6,21 @@
   max-height: 400px;
   overflow: auto;
 }
+
+.jumbotron {
+  background-color: #FFCA00;
+}
+
+.dirHead {
+  font-family: cursive;
+}
+
+.button {
+  font-weight: bold;
+  font-family: sans-serif;
+  border-radius: 20px;
+}
+
+h2 {
+  font-weight: bold;
+}
