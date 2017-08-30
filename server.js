@@ -8,16 +8,17 @@ var listingData, server;
 
 var requestHandler = function(request, response) {
 	var parsedUrl = url.parse(request.url);
-
   // if GET request from /listings then respond with listingData
   // else if GET request from /(other) then respond error 404
-  if (parsedUrl.path === '/listings' ) response.write(JSON.stringify(listingData));
+  if (parsedUrl.path === '/listings' ) {
+    response.statusCode = 200;
+    response.end(JSON.stringify(listingData));
+  }
   else {
     response.statusCode = 404;
     response.end('Bad gateway error');
   }
-  response.end();
-
+  // response.end();
 };
 
 fs.readFile('listings.json', 'utf8', function(err, data) {
