@@ -18,6 +18,7 @@ listing =  {
 describe('Listing Schema Unit Tests', function() {
 
   before(function(done) {
+    console.log('Status : Connecting to DB');
     mongoose.connect(config.db.uri);
     done();
   });
@@ -34,6 +35,7 @@ describe('Listing Schema Unit Tests', function() {
         name: listing.name, 
         code: listing.code
       }).save(function(err, listing){
+	console.log('Status: Saving given Name and Code');
         should.not.exist(err);
         id = listing._id;
         done();
@@ -42,6 +44,7 @@ describe('Listing Schema Unit Tests', function() {
 
     it('saves properly when all three properties provided', function(done){
       new Listing(listing).save(function(err, listing){
+	console.log('Status: Saving given Entire Listing');
         should.not.exist(err);
         id = listing._id;
         done();
@@ -52,6 +55,7 @@ describe('Listing Schema Unit Tests', function() {
       new Listing({
         code: listing.code
       }).save(function(err){
+	console.log('Status: Saving given Name Not Provided');
         should.exist(err);
         done();
       })
@@ -61,6 +65,7 @@ describe('Listing Schema Unit Tests', function() {
       new Listing({
         name: listing.name
       }).save(function(err){
+	console.log('Status: Saving given Code Not Provided');	
         should.exist(err);
         done();
       })
