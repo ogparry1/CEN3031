@@ -4,7 +4,7 @@
 
 module.exports = {
   db: {
-    uri: 'mongodb://<dbuser>:<dbpassword>@ds123084.mlab.com:23084/cen3031_assignment3', 
+    uri: 'mongodb://ogparry1:O3g3g3i3e3@ds123084.mlab.com:23084/cen3031_assignment3', 
   }
 };
 
