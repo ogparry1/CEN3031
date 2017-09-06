@@ -20,7 +20,7 @@ before(function(done) {
   and then save it to your Mongo database 
  */
 
-var listItem;
+var listItem = JSON.stringify(listing;
 
 for each (var item in listings.entries) {
 	listItem = new Listing(item);
