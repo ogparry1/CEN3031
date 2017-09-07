@@ -22,8 +22,8 @@ var migrateData = function() {
 	for (var item in listData.entries) {
 		listItem = new Listing(listData.entries[item])
 		.save(function(err) { if (err) throw err; });
-		console.log('Item ' + item + ' Pushed to Database');
 	}
+	mongoose.disconnect();
 };
 
 fs.readFile('listings.json', 'utf8', function(err, data) {
